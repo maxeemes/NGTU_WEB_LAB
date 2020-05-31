@@ -1,0 +1,5 @@
+<h1>Контакты</h1>
+<button (focus)="notARobot()" *ngIf="isRobot">Я НЕ РОБОТ!</button>
+<div *ngIf="!isRobot">
+  <p *ngFor="let cont of conts"><a [href]="cont[1]">{{cont[0]}}</a></p>
+</div>

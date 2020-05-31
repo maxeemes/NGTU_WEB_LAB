@@ -1,0 +1,17 @@
+<h1>Главная</h1>
+<div class="left">
+  <button (click)="toggle()">{{buttonText}}</button>
+
+  <div *ngIf="condition">
+    <ul>
+      <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+    `
+  </div>
+</div>
+<label>
+  <input [(ngModel)]="items" [size]="getSum()" readonly type="text">
+</label><br>
+<label>
+  <input [(ngModel)]="items" [size]="getSum()" readonly type="text">
+</label>
