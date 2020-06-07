@@ -10,8 +10,8 @@ export class FooterComponent {
 
   siteInfo: any[] = [
     {
-      headTitle: 'Инфструменты разработки сайта',
-      footerText: '© ' + this.myDate.toLocaleDateString() + ' - Личная страница на Angular',
+      headTitle: 'Инструменты разработки сайта',
+      footerText: '© ' + this.myDate.getFullYear() + ' - Личная страница на Angular',
       content: [
         {
           title: 'Angular',
