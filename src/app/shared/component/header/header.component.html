@@ -1,4 +1,11 @@
-<ul>
-  <li><a [routerLink]="['/system', 'home']">Главная</a></li>
-  <li><a [routerLink]="['/system', 'contact']">Контакты</a></li>
+<ul class="pt-3 display-4 nav nav-tabs nav-fill">
+  <li *ngFor="let sitePage of sitePages" class="nav-item">
+    <a (click)="inActivateAll(); sitePage.isActive = true"
+       [class.active]="sitePage.isActive"
+       [routerLink]="sitePage.link"
+       class="nav-link"
+    >
+      {{sitePage.name}}
+    </a>
+  </li>
 </ul>

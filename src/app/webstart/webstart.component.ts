@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./webstart.component.css']
 })
 export class WebstartComponent {
-  titleh1 = 'Мое приложение на Angular';
-
+  titleh1 = 'Личная страница студента на Angular';
 }
+

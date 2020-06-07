@@ -1,17 +1,45 @@
-<h1>Главная</h1>
-<div class="left">
-  <button (click)="toggle()">{{buttonText}}</button>
-
-  <div *ngIf="condition">
-    <ul>
-      <li *ngFor="let item of items">{{item}}</li>
-    </ul>
-    `
+<!--suppress JSPrimitiveTypeWrapperUsage -->
+<div class="row">
+  <div *ngFor="let studentItem of studentInfo" class="p-3 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h5>
+          {{studentItem.headTitle}}
+        </h5>
+      </div>
+      <div class="card-body" data-spy="scroll" style="height: 420px; overflow: auto">
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let contentCard of studentItem.content" class="list-group-item">
+            <h5 class="card-title">
+              <button
+                (click)="contentCard['isCollapsed'] = !contentCard['isCollapsed']"
+                [attr.aria-expanded]="contentCard['isCollapsed']"
+                [disabled]="contentCard['addInfoLink'] == null"
+                aria-controls="collapseBasic"
+                class="btn btn-lg btn-info btn-block dropdown-toggle"
+                type="button"
+              >
+                {{contentCard["title"]}}
+              </button>
+            </h5>
+            <div
+              [collapse]="contentCard['isCollapsed']"
+              [isAnimated]="true"
+              id="collapseBasic">
+              <div class="card-text">
+                <p *ngFor="let txt of contentCard['value']">
+                  {{txt}}
+                </p>
+              </div>
+              <div *ngIf="contentCard['addInfoLink'] != null">
+                <a [href]="contentCard['addInfoLink']" class="card-link">
+                  Подробнее
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
-<label>
-  <input [(ngModel)]="items" [size]="getSum()" readonly type="text">
-</label><br>
-<label>
-  <input [(ngModel)]="items" [size]="getSum()" readonly type="text">
-</label>

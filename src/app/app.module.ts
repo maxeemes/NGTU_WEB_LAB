@@ -8,7 +8,6 @@ import {SystemModul} from './system/system.modul';
 
 import {AppRoutingModule} from './app-routing.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

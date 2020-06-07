@@ -9,13 +9,20 @@ import {Component} from '@angular/core';
 
 
 export class ContactComponent {
+  contactButtonText = 'Отобразить контакты';
   isRobot = true;
+  isHide = true;
   conts: [string, string][] = [
     ['E-mail: max.s.99@yandex.ru', 'mailto:max.s.99@yandex.ru'],
     ['GitHub: https://github.com/maxeemes', 'https://github.com/maxeemes']
   ];
 
-  notARobot() {
-    this.isRobot = false;
+  hideToggle(newHide: boolean) {
+    this.isHide = newHide;
+    if (this.isHide) {
+      this.contactButtonText = 'Отобразить контакты';
+    } else {
+      this.contactButtonText = 'Скрыть контакты';
+    }
   }
 }

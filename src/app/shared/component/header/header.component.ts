@@ -10,6 +10,25 @@ export class HeaderComponent implements OnInit {
   constructor() {
   }
 
+  sitePages: any[] = [
+    {
+      name: 'Главная',
+      link: ['/system', 'home'],
+      isActive: true
+    },
+    {
+      name: 'Контакты',
+      link: ['/system', 'contact'],
+      isActive: false
+    }
+  ];
+
+  inActivateAll() {
+    this.sitePages.forEach(sitePage => {
+      sitePage.isActive = false;
+    });
+  }
+
   ngOnInit() {
   }
 }
